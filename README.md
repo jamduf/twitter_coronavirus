@@ -1,6 +1,7 @@
 # Twitter Coronavirus Hashtag Analysis
 This project analyzes the use of different hashtags related to Covid-19 / Coronavirus throughout 2020. This data is parsed and aggregated using `src/map.py` and `src/reduce.py`, which is saved into the `combined_outputs.json` file. The visualizations are generated using the `src/visualize.py` and `src/alternative_reduce.py` algorithms. This analysis takes into account mostly English, but also some non-English (for example, #코로나바이러스) hashtags, however, the unicode characters caused some issues with display in the visualziations. This analysis gives insight into global engagement and trends about the pandemic. 
 
+This project is implemented in python, and utilizes `matplotlib`, `json`, `argparse`, `collections`, and `datetime` for the alternative visualizations.
 ## Visualizations
 
 These visualizations are generated using `src/visualize.py`. This command takes in an input hashtag and uses either the `combined_outputs/all_lang.json` or `combined_outputs/all_country.json` files. An example input for this command would be:
@@ -26,3 +27,8 @@ And here is the same hashtag, #코로나바이러스, counted by language:
 ![Tweets by Language -- #coronavirus](코로나바이러스_lang.png)
 the most popular language used for this hashtag was Korean, followed by English.
 ##
+
+## Alternative Visualizations
+The other visualization algorithm, `src/alternative_reduce.py`, gives the count of a hashtag used by day throughout the entire year of 2020. Here is an example output of this, with the inputs #coronavirus and #covid19:
+![#coronavirus vs. #covid19](hashtag_trends2.png)
+As you can see, #coronavirus was more popular around March, and as time went on, people started using #covid19 more compared to #coronavirus. This alligns with what I expected, Covid-19 took off as the more popular way of referring to the pandemic pretty quickly. 
