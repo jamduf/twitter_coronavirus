@@ -17,8 +17,8 @@ total = defaultdict(lambda: Counter())
 for path in args.input_paths:
     with open(path) as f:
         tmp = json.load(f)
-        for k in tmp:
-            total[k] += tmp[k]
+        for k,v in tmp.items():
+            total[k].update(v)
 
 # write the output path
 with open(args.output_path,'w') as f:
