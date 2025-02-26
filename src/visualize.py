@@ -41,7 +41,7 @@ elif "country" in args.input_path:
     data_type = "country"
 else:
     data_type = "unknown"
-
+    
 #plot
 plt.figure(figsize=(10,6))
 plt.bar(keys, values)
